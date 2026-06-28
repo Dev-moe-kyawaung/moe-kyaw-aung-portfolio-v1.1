@@ -1,131 +1,88 @@
-const body = document.body;
+const root = document.documentElement;
+const themeToggle = document.querySelector('[data-theme-toggle]');
+const navToggle = document.querySelector('[data-nav-toggle]');
+const navMenu = document.querySelector('[data-nav-menu]');
+const backtop = document.querySelector('[data-backtop]');
+const counters = document.querySelectorAll('[data-counter]');
+const reveals = document.querySelectorAll('.reveal');
 
-const qs = (s, p = document) => p.querySelector(s);
-const qsa = (s, p = document) => [...p.querySelectorAll(s)];
+const savedTheme = localStorage.getItem('theme') || 'dark';
+root.dataset.theme = savedTheme;
 
-const state = {
-  dark: true,
-  typingDone: false
-};
+function syncThemeIcon() {
+  if (!themeToggle) return;
+  const icon = themeToggle.querySelector('i');
+  icon.className = root.dataset.theme === 'light' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+}
 
-function initThemeToggle(){
-  const toggle = qs('[data-theme-toggle]');
-  const saved = localStorage.getItem('theme');
-  if(saved === 'light'){
-    body.classList.add('light');
-    state.dark = false;
+syncThemeIcon();
+
+themeToggle?.addEventListener('click', () => {
+  root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+  localStorage.setItem('theme', root.dataset.theme);
+  syncThemeIcon();
+});
+
+navToggle?.addEventListener('click', () => {
+  const open = navMenu.dataset.open === 'true';
+  navMenu.dataset.open = String(!open);
+});
+
+document.querySelectorAll('[data-nav-link]').forEach(link => {
+  if (link.getAttribute('href') === location.pathname.split('/').pop() || (location.pathname === '/' && link.getAttribute('href') === 'index.html')) {
+    link.classList.add('active');
   }
-  toggle?.addEventListener('click', () => {
-    body.classList.toggle('light');
-    state.dark = !body.classList.contains('light');
-    localStorage.setItem('theme', state.dark ? 'dark' : 'light');
+  link.addEventListener('click', () => {
+    if (navMenu) navMenu.dataset.open = 'false';
   });
-}
+});
 
-function initMobileNav(){
-  const btn = qs('[data-nav-toggle]');
-  const menu = qs('[data-nav-menu]');
-  btn?.addEventListener('click', () => menu?.classList.toggle('open'));
-  qsa('[data-nav-link]').forEach(a => a.addEventListener('click', () => menu?.classList.remove('open')));
-}
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const end = Number(el.dataset.counter || 0);
+    const suffix = el.dataset.suffix || '';
+    let start = 0;
+    const duration = 900;
+    const t0 = performance.now();
 
-function initReveal(){
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if(e.isIntersecting){
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    });
-  }, {threshold:.12});
-  qsa('.reveal').forEach(el => io.observe(el));
-}
-
-function typeTerminal(){
-  const el = qs('[data-terminal-text]');
-  const shell = qs('[data-terminal-shell]');
-  if(!el || !shell) return;
-  const lines = [
-    '> boot moe-kyaw-aung-portfolio',
-    '> role: Android Senior Developer',
-    '> stack: Kotlin · Jetpack Compose · Firebase · CI/CD',
-    '> focus: secure, scalable, user-friendly products',
-    '> status: ready for release'
-  ];
-  let i = 0, j = 0, out = '';
-  const tick = () => {
-    if(i >= lines.length){
-      state.typingDone = true;
-      shell.classList.add('typed');
-      return;
+    function tick(t) {
+      const p = Math.min((t - t0) / duration, 1);
+      const value = Math.floor(start + (end - start) * (1 - Math.pow(1 - p, 3)));
+      el.textContent = value + suffix;
+      if (p < 1) requestAnimationFrame(tick);
     }
-    if(j < lines[i].length){
-      out += lines[i][j++];
-      el.innerHTML = `${out}<span class="cursor"></span>`;
-      setTimeout(tick, 18);
-    }else{
-      out += '
-';
-      i++; j = 0;
-      setTimeout(tick, 220);
-    }
-  };
-  tick();
-}
-
-function initCounters(){
-  const counters = qsa('[data-counter]');
-  if(!counters.length) return;
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if(!e.isIntersecting) return;
-      const el = e.target;
-      const end = +el.dataset.counter;
-      const suffix = el.dataset.suffix || '';
-      const start = 0;
-      const dur = 1300;
-      const t0 = performance.now();
-      const step = now => {
-        const p = Math.min((now - t0) / dur, 1);
-        el.textContent = Math.floor(start + (end - start) * (1 - Math.pow(1 - p, 3))) + suffix;
-        if(p < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-      io.unobserve(el);
-    });
-  }, {threshold:.5});
-  counters.forEach(c => io.observe(c));
-}
-
-function initBackToTop(){
-  const btn = qs('[data-backtop]');
-  if(!btn) return;
-  window.addEventListener('scroll', () => {
-    btn.classList.toggle('show', window.scrollY > 600);
+    requestAnimationFrame(tick);
+    counterObserver.unobserve(el);
   });
-  btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-}
+}, { threshold: 0.35 });
 
-function initFormValidation(){
-  const form = qs('[data-contact-form]');
-  form?.addEventListener('submit', e => {
+counters.forEach(c => counterObserver.observe(c));
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+reveals.forEach(el => revealObserver.observe(el));
+
+window.addEventListener('scroll', () => {
+  if (!backtop) return;
+  backtop.classList.toggle('show', window.scrollY > 500);
+});
+
+backtop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+document.querySelectorAll('[data-contact-form]').forEach(form => {
+  form.addEventListener('submit', e => {
     e.preventDefault();
-    const name = qs('[name="name"]', form);
-    const email = qs('[name="email"]', form);
-    const message = qs('[name="message"]', form);
-    const ok = name.value.trim() && /^[^s@]+@[^s@]+.[^s@]+$/.test(email.value) && message.value.trim().length > 12;
-    qs('[data-form-status]').textContent = ok ? 'Message validated. Ready to connect.' : 'Please complete all fields correctly.';
-    qs('[data-form-status]').className = ok ? 'status success' : 'status error';
-    if(ok) form.reset();
+    const status = form.querySelector('[data-form-status]');
+    if (status) status.textContent = 'Message captured locally. Connect this form to your backend or email service.';
+    form.reset();
   });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  initThemeToggle();
-  initMobileNav();
-  initReveal();
-  typeTerminal();
-  initCounters();
-  initBackToTop();
-  initFormValidation();
 });
