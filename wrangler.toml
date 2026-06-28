@@ -1,0 +1,12 @@
+name = "moe-kyaw-aung-portfolios-v1-0"
+main = "worker.js"
+compatibility_date = "2026-06-28"
+workers_dev = false
+
+[vars]
+ORIGIN_HOST = "your-username.github.io"
+ORIGIN_PROTOCOL = "https:"
+
+[env.production]
+route = "portfolio.example.com/*"
+zone_id = "YOUR_ZONE_ID"
