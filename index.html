@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Moe-Kyaw-Aung-Portfolio V3 — Ultra-premium Android Senior Developer portfolio built with HTML, Tailwind CSS, vanilla JavaScript, and Cloudflare edge optimization.">
+  <meta name="theme-color" content="#070b12">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Moe-Kyaw-Aung-Portfolio V3 | Android Senior Developer">
+  <meta property="og:description" content="A cinematic, production-ready Android Senior Developer portfolio with terminal-inspired visuals and premium UX.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-username.github.io/moe-kyaw-aung-portfolios-v1.0/">
+  <meta property="og:image" content="assets/img/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Moe-Kyaw-Aung-Portfolio V3 | Android Senior Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Moe Kyaw Aung Portfolio Home">
+        MKA<span style="color:var(--accent);">V3</span>
+      </a>
+
+      <button class="nav-toggle" data-nav-toggle aria-label="Open navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-menu" data-nav-menu aria-label="Main navigation">
+        <a data-nav-link href="index.html">Home</a>
+        <a data-nav-link href="about.html">About</a>
+        <a data-nav-link href="projects.html">Projects</a>
+        <a data-nav-link href="services.html">Services</a>
+        <a data-nav-link href="pricing.html">Pricing</a>
+        <a data-nav-link href="contact.html">Contact</a>
+        <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark and light mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <canvas class="hero-canvas" id="particleCanvas" aria-hidden="true"></canvas>
+
+      <div class="container hero-content">
+        <div class="grid grid-2" style="align-items:center; min-height:calc(100svh - 110px); gap:32px;">
+          <div class="reveal">
+            <span class="badge">
+              <i class="fa-solid fa-terminal"></i>
+              Ultra Premium V3 · Android Senior Developer
+            </span>
+
+            <h1 style="font-size:clamp(2.5rem,5vw,5.8rem); line-height:0.98; margin:.85rem 0 1rem; letter-spacing:-.04em;">
+              ⭐ MOE KYAW AUNG ⭐<br>
+              ANDROID SENIOR DEVELOPER
+            </h1>
+
+            <p style="max-width:62ch; color:var(--muted); font-size:1.05rem; margin:0;">
+              Android Developer with nearly 12 years of hands-on experience building secure, scalable, and user-friendly mobile applications. Strong in Kotlin, modern Jetpack development, Firebase integration, REST APIs, clean architecture, and release-ready delivery.
+            </p>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:26px;">
+              <a class="btn btn-primary" href="contact.html">
+                <i class="fa-solid fa-paper-plane"></i>
+                Hire Me
+              </a>
+              <a class="btn" href="projects.html">
+                <i class="fa-solid fa-diagram-project"></i>
+                View Work
+              </a>
+              <a class="btn" href="about.html">
+                <i class="fa-solid fa-user-astronaut"></i>
+                About Me
+              </a>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:22px;">
+              <span class="badge"><i class="fa-solid fa-shield-halved"></i> Secure</span>
+              <span class="badge"><i class="fa-solid fa-layer-group"></i> Scalable</span>
+              <span class="badge"><i class="fa-solid fa-bolt"></i> Performance Tuning</span>
+              <span class="badge"><i class="fa-solid fa-language"></i> Burmese Support</span>
+            </div>
+
+            <div class="grid grid-4" style="margin-top:28px;">
+              <div class="stat reveal">
+                <strong data-counter="10" data-suffix="+">0+</strong>
+                <div>Years</div>
+              </div>
+              <div class="stat reveal">
+                <strong data-counter="3000" data-suffix="+">0+</strong>
+                <div>Apps</div>
+              </div>
+              <div class="stat reveal">
+                <strong data-counter="122">0</strong>
+                <div>Repos</div>
+              </div>
+              <div class="stat reveal">
+                <strong data-counter="100" data-suffix="%">0%</strong>
+                <div>Satisfaction</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="terminal" id="terminalShell" data-terminal-shell>
+              <div class="terminal-head">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span style="margin-left:8px; color:var(--muted); font-family:'JetBrains Mono',monospace;">
+                  compose://identity
+                </span>
+              </div>
+
+              <div class="terminal-body">
+                <div class="code-line" data-terminal-text></div>
+
+                <div style="margin-top:18px; padding-top:18px; border-top:1px solid rgba(255,255,255,.06); display:grid; gap:10px;">
+                  <div><strong>Stack:</strong> Kotlin, Jetpack Compose, Room, Firebase, Retrofit</div>
+                  <div><strong>Focus:</strong> Clean architecture, maintainability, UX, release quality</div>
+                  <div><strong>Mode:</strong> Terminal / Hacker aesthetic with premium industrial polish</div>
+                </div>
+
+                <div class="card" style="margin-top:20px; padding:18px; background:rgba(255,255,255,.03);">
+                  <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+                    <img src="assets/img/profile.jpg" alt="Moe Kyaw Aung profile image" width="72" height="72" style="border-radius:18px; object-fit:cover; border:1px solid rgba(255,255,255,.12);">
+                    <div style="min-width:0;">
+                      <div style="font-weight:800; font-size:1.05rem;">Moe Kyaw Aung</div>
+                      <div style="color:var(--muted); font-size:.95rem;">Android Senior Developer · Kotlin · Jetpack Compose</div>
+                    </div>
+                  </div>
+
+                  <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+                    <a class="btn" href="https://github.com/Dev-moe-kyawaung" target="_blank" rel="noreferrer">
+                      <i class="fa-brands fa-github"></i>
+                      GitHub
+                    </a>
+                    <a class="btn" href="mailto:moekyawaung.mka2030@gmail.com">
+                      <i class="fa-solid fa-envelope"></i>
+                      Email
+                    </a>
+                    <a class="btn" href="https://gravatar.com/moekyawaung13721" target="_blank" rel="noreferrer">
+                      <i class="fa-solid fa-circle-user"></i>
+                      Gravatar
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-2" style="margin-top:18px;">
+              <a class="card reveal" href="services.html" style="padding:20px;">
+                <span class="badge"><i class="fa-solid fa-screwdriver-wrench"></i> Services</span>
+                <h2 style="margin:12px 0 8px;">Release-Ready Engineering</h2>
+                <p style="margin:0; color:var(--muted);">Android development, architecture, CI/CD, performance optimization, and long-term support.</p>
+              </a>
+
+              <a class="card reveal" href="pricing.html" style="padding:20px;">
+                <span class="badge"><i class="fa-solid fa-tags"></i> Pricing</span>
+                <h2 style="margin:12px 0 8px;">Flexible Engagement Tiers</h2>
+                <p style="margin:0; color:var(--muted);">Starter, Growth, and Enterprise options for different project scopes.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="grid grid-2" style="align-items:start;">
+          <div class="card reveal" style="padding:28px;">
+            <span class="badge"><i class="fa-solid fa-user-astronaut"></i> Advanced About</span>
+            <h2 style="margin:12px 0 10px;">Secure, scalable mobile engineering with a product mindset.</h2>
+            <p style="margin:0; color:var(--muted);">
+              I specialize in Kotlin-based Android development with modern Jetpack tooling, clean architecture, Firebase, REST API consumption, local caching, and practical security. My focus is to deliver maintainable solutions that are easy to extend and ship confidently.
+            </p>
+
+            <div class="grid grid-3" style="margin-top:20px;">
+              <div class="stat">
+                <strong data-counter="12" data-suffix="+">0+</strong>
+                <div>Years hands-on</div>
+              </div>
+              <div class="stat">
+                <strong data-counter="3" data-suffix="K+">0K+</strong>
+                <div>Apps built</div>
+              </div>
+              <div class="stat">
+                <strong data-counter="100" data-suffix="%">0%</strong>
+                <div>Feedback</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card reveal" style="padding:28px;">
+            <h2 style="margin-top:0;">Career timeline</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <strong>Foundation years</strong>
+                <p style="color:var(--muted);">Built Android fundamentals and learned practical delivery patterns for stable apps.</p>
+              </div>
+              <div class="timeline-item">
+                <strong>Jetpack era</strong>
+                <p style="color:var(--muted);">Adopted Compose, ViewModel, Room, and architecture-first development workflows.</p>
+              </div>
+              <div class="timeline-item">
+                <strong>Modern delivery</strong>
+                <p style="color:var(--muted);">Focused on automation, performance, accessibility, and production-ready release processes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="reveal" style="margin-bottom:18px;">
+          <span class="badge"><i class="fa-solid fa-diagram-project"></i> Selected Work</span>
+          <h2 style="margin:12px 0 0;">Built to be stable, fast, and maintainable.</h2>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card reveal" style="padding:24px;">
+            <span class="badge"><i class="fa-brands fa-android"></i> Android App</span>
+            <h3>Compose Productivity Suite</h3>
+            <p style="color:var(--muted);">Offline-first workflow app with Room, WorkManager, and Firebase sync patterns.</p>
+          </article>
+
+          <article class="card reveal" style="padding:24px;">
+            <span class="badge"><i class="fa-solid fa-shield-halved"></i> Secure UI</span>
+            <h3>Role-Aware Dashboard</h3>
+            <p style="color:var(--muted);">Clean architecture dashboard with secure auth flows and data-driven UI states.</p>
+          </article>
+
+          <article class="card reveal" style="padding:24px;">
+            <span class="badge"><i class="fa-solid fa-language"></i> Localization</span>
+            <h3>Burmese / English UI System</h3>
+            <p style="color:var(--muted);">Flexible multilingual design patterns for text, layouts, and content scaling.</p>
+          </article>
+        </div>
+
+        <div style="display:flex; justify-content:center; margin-top:20px;">
+          <a class="btn" href="projects.html">
+            <i class="fa-solid fa-arrow-right"></i>
+            Explore Full Projects
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid grid-2">
+          <div class="card reveal" style="padding:28px;">
+            <span class="badge"><i class="fa-solid fa-cube"></i> Features</span>
+            <h2 style="margin:12px 0 10px;">What the V3 portfolio includes</h2>
+            <ul style="margin:0; padding-left:18px; color:var(--muted); display:grid; gap:8px;">
+              <li>Responsive mobile menu and smooth navigation.</li>
+              <li>Dark / light theme toggle.</li>
+              <li>Scroll-triggered reveal animations.</li>
+              <li>Counter blocks and animated hero terminal.</li>
+              <li>FAQ, pricing, testimonials, contact, and privacy pages.</li>
+            </ul>
+          </div>
+
+          <div class="card reveal" style="padding:28px;">
+            <span class="badge"><i class="fa-solid fa-rocket"></i> Performance</span>
+            <h2 style="margin:12px 0 10px;">Built for fast static hosting</h2>
+            <p style="margin:0; color:var(--muted);">
+              This structure keeps the site optimized for GitHub Pages by using shared assets, deferred scripts, minimal blocking resources, and Cloudflare Worker control for caching and security headers.
+            </p>
+            <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
+              <span class="badge">Static-first</span>
+              <span class="badge">Edge caching</span>
+              <span class="badge">SEO-ready</span>
+              <span class="badge">Accessible</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="card reveal" style="padding:30px;">
+          <div class="grid grid-2" style="align-items:center;">
+            <div>
+              <span class="badge"><i class="fa-solid fa-paper-plane"></i> Contact</span>
+              <h2 style="margin:12px 0 10px;">Let’s build something production-ready.</h2>
+              <p style="margin:0; color:var(--muted); max-width:62ch;">
+                Whether you need an Android app, architecture cleanup, CI/CD automation, or a premium portfolio experience, this V3 build is designed to present your work at a high professional level.
+              </p>
+            </div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-start; justify-content:sm; margin-top:12px;">
+              <a class="btn btn-primary" href="contact.html">
+                <i class="fa-solid fa-envelope"></i>
+                Open Contact Form
+              </a>
+              <a class="btn" href="mail-collection.html">
+                <i class="fa-solid fa-bell"></i>
+                Newsletter Signup
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button class="btn backtop" data-backtop aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
