@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Newsletter and mail collection page for Moe Kyaw Aung portfolio updates and new project announcements.">
+  <meta name="theme-color" content="#070b12">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Mail Collection | Moe-Kyaw-Aung-Portfolio V3">
+  <meta property="og:description" content="Join the mailing list for portfolio updates and new project announcements.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-username.github.io/moe-kyaw-aung-portfolios-v1.0/mail-collection.html">
+  <title>Mail Collection | Moe-Kyaw-Aung-Portfolio V3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Moe Kyaw Aung Portfolio Home">
+        MKA<span style="color:var(--accent);">V3</span>
+      </a>
+
+      <button class="nav-toggle" data-nav-toggle aria-label="Open navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-menu" data-nav-menu aria-label="Main navigation">
+        <a data-nav-link href="index.html">Home</a>
+        <a data-nav-link href="about.html">About</a>
+        <a data-nav-link href="projects.html">Projects</a>
+        <a data-nav-link href="services.html">Services</a>
+        <a data-nav-link href="pricing.html">Pricing</a>
+        <a data-nav-link href="contact.html">Contact</a>
+        <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark and light mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top:calc(var(--header-h) + 34px);">
+      <div class="container">
+        <div class="grid grid-2" style="align-items:start; gap:24px;">
+          <div class="card reveal" style="padding:30px;">
+            <span class="badge">
+              <i class="fa-solid fa-bell"></i>
+              Newsletter
+            </span>
+            <h1 style="font-size:clamp(2.2rem,4vw,4rem); line-height:1.02; margin:.8rem 0 1rem;">
+              Get updates on new portfolio work and releases.
+            </h1>
+            <p style="max-width:68ch; color:var(--muted); margin:0;">
+              Join the mailing list to receive occasional updates about new projects, portfolio improvements, and important release announcements. The form is intentionally simple so it stays quick to complete.
+            </p>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:22px;">
+              <span class="badge"><i class="fa-solid fa-envelope"></i> Email only</span>
+              <span class="badge"><i class="fa-solid fa-rocket"></i> Project updates</span>
+              <span class="badge"><i class="fa-solid fa-shield-halved"></i> No spam focus</span>
+            </div>
+
+            <div class="card" style="padding:20px; margin-top:22px;">
+              <span class="badge"><i class="fa-solid fa-gift"></i> What you get</span>
+              <ul style="margin:14px 0 0; padding-left:18px; color:var(--muted); display:grid; gap:8px;">
+                <li>Portfolio release notes.</li>
+                <li>New project announcements.</li>
+                <li>Occasional behind-the-build updates.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card reveal" style="padding:28px;">
+            <span class="badge">
+              <i class="fa-solid fa-paper-plane"></i>
+              Join the list
+            </span>
+            <h2 style="margin:12px 0 10px;">Subscribe with your email</h2>
+            <p style="margin:0; color:var(--muted);">
+              Enter your email address below and click the button to join the list. This page keeps the conversion path short and direct.
+            </p>
+
+            <form data-contact-form style="margin-top:20px; display:grid; gap:14px;">
+              <label>
+                <span style="display:block; margin-bottom:8px; font-weight:600;">Email address</span>
+                <input name="email" type="email" placeholder="you@example.com" required
+                  style="width:100%; padding:14px 16px; border-radius:14px; border:1px solid var(--line); background:rgba(255,255,255,.04); color:var(--text); outline:none;">
+              </label>
+
+              <label>
+                <span style="display:block; margin-bottom:8px; font-weight:600;">Name</span>
+                <input name="name" type="text" placeholder="Your name" required
+                  style="width:100%; padding:14px 16px; border-radius:14px; border:1px solid var(--line); background:rgba(255,255,255,.04); color:var(--text); outline:none;">
+              </label>
+
+              <label>
+                <span style="display:block; margin-bottom:8px; font-weight:600;">Interests</span>
+                <select name="message"
+                  style="width:100%; padding:14px 16px; border-radius:14px; border:1px solid var(--line); background:rgba(255,255,255,.04); color:var(--text); outline:none;">
+                  <option value="Portfolio updates">Portfolio updates</option>
+                  <option value="Android development">Android development</option>
+                  <option value="New project launches">New project launches</option>
+                  <option value="All updates">All updates</option>
+                </select>
+              </label>
+
+              <button class="btn btn-primary" type="submit">
+                <i class="fa-solid fa-bell"></i>
+                Subscribe Now
+              </button>
+
+              <p data-form-status style="margin:0; min-height:1.4em; color:var(--muted);"></p>
+            </form>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="margin-top:22px;">
+          <div class="card reveal" style="padding:28px;">
+            <span class="badge">
+              <i class="fa-solid fa-circle-info"></i>
+              Expectations
+            </span>
+            <h2 style="margin:12px 0 10px;">What to expect after subscribing</h2>
+            <p style="margin:0; color:var(--muted);">
+              You’ll only receive relevant updates. The goal is to keep the list useful and quiet, not to overwhelm subscribers with frequent messages.
+            </p>
+          </div>
+
+          <div class="card reveal" style="padding:28px;">
+            <span class="badge">
+              <i class="fa-solid fa-link"></i>
+              Alternative
+            </span>
+            <h2 style="margin:12px 0 10px;">Prefer a direct message instead?</h2>
+            <p style="margin:0; color:var(--muted);">
+              If you want to discuss a project immediately, the contact page is the fastest way to get in touch.
+            </p>
+            <div style="margin-top:18px;">
+              <a class="btn" href="contact.html">
+                <i class="fa-solid fa-paper-plane"></i>
+                Contact Me
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button class="btn backtop" data-backtop aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
