@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Moe Kyaw Aung — Android Senior Developer portfolio with email, social links, and a simple contact form.">
+  <meta name="theme-color" content="#070b12">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Contact | Moe-Kyaw-Aung-Portfolio V3">
+  <meta property="og:description" content="Get in touch with Moe Kyaw Aung for Android development, portfolio work, or consulting.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-username.github.io/moe-kyaw-aung-portfolios-v1.0/contact.html">
+  <title>Contact | Moe-Kyaw-Aung-Portfolio V3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Moe Kyaw Aung Portfolio Home">
+        MKA<span style="color:var(--accent);">V3</span>
+      </a>
+
+      <button class="nav-toggle" data-nav-toggle aria-label="Open navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-menu" data-nav-menu aria-label="Main navigation">
+        <a data-nav-link href="index.html">Home</a>
+        <a data-nav-link href="about.html">About</a>
+        <a data-nav-link href="projects.html">Projects</a>
+        <a data-nav-link href="services.html">Services</a>
+        <a data-nav-link href="pricing.html">Pricing</a>
+        <a data-nav-link href="contact.html">Contact</a>
+        <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark and light mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top:calc(var(--header-h) + 34px);">
+      <div class="container">
+        <div class="grid grid-2" style="align-items:start; gap:24px;">
+          <div class="reveal">
+            <span class="badge">
+              <i class="fa-solid fa-paper-plane"></i>
+              Contact
+            </span>
+            <h1 style="font-size:clamp(2.2rem,4vw,4rem); line-height:1.02; margin:.8rem 0 1rem;">
+              Let’s talk about your next build.
+            </h1>
+            <p style="max-width:68ch; color:var(--muted); margin:0;">
+              Whether you need Android development, architecture support, a premium portfolio build, or release workflow help, this is the best place to start the conversation.
+            </p>
+
+            <div class="grid" style="gap:14px; margin-top:22px;">
+              <div class="card" style="padding:20px;">
+                <span class="badge"><i class="fa-solid fa-envelope"></i> Email</span>
+                <div style="margin-top:10px; font-weight:700;">moekyawaung.mka2030@gmail.com</div>
+              </div>
+
+              <div class="card" style="padding:20px;">
+                <span class="badge"><i class="fa-brands fa-github"></i> GitHub</span>
+                <div style="margin-top:10px; font-weight:700;">
+                  <a href="https://github.com/Dev-moe-kyawaung" target="_blank" rel="noreferrer">github.com/Dev-moe-kyawaung</a>
+                </div>
+              </div>
+
+              <div class="card" style="padding:20px;">
+                <span class="badge"><i class="fa-brands fa-grav"></i> Gravatar</span>
+                <div style="margin-top:10px; font-weight:700;">
+                  <a href="https://gravatar.com/moekyawaung13721" target="_blank" rel="noreferrer">gravatar.com/moekyawaung13721</a>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
+              <a class="btn" href="services.html">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                View Services
+              </a>
+              <a class="btn btn-primary" href="pricing.html">
+                <i class="fa-solid fa-tags"></i>
+                View Pricing
+              </a>
+            </div>
+          </div>
+
+          <div class="card reveal" style="padding:28px;">
+            <span class="badge">
+              <i class="fa-solid fa-message"></i>
+              Quick form
+            </span>
+            <h2 style="margin:12px 0 10px;">Send a short message</h2>
+            <p style="margin:0; color:var(--muted);">
+              Keep it simple: your name, email, and a short description of the work you need. I’ll use that to reply with a practical next step.
+            </p>
+
+            <form data-contact-form style="margin-top:20px; display:grid; gap:14px;">
+              <label>
+                <span style="display:block; margin-bottom:8px; font-weight:600;">Name</span>
+                <input name="name" type="text" placeholder="Your name" required
+                  style="width:100%; padding:14px 16px; border-radius:14px; border:1px solid var(--line); background:rgba(255,255,255,.04); color:var(--text); outline:none;">
+              </label>
+
+              <label>
+                <span style="display:block; margin-bottom:8px; font-weight:600;">Email</span>
+                <input name="email" type="email" placeholder="you@example.com" required
+                  style="width:100%; padding:14px 16px; border-radius:14px; border:1px solid var(--line); background:rgba(255,255,255,.04); color:var(--text); outline:none;">
+              </label>
+
+              <label>
+                <span style="display:block; margin-bottom:8px; font-weight:600;">Message</span>
+                <textarea name="message" rows="6" placeholder="Tell me what you want to build or improve" required
+                  style="width:100%; padding:14px 16px; border-radius:14px; border:1px solid var(--line); background:rgba(255,255,255,.04); color:var(--text); outline:none; resize:vertical;"></textarea>
+              </label>
+
+              <button class="btn btn-primary" type="submit">
+                <i class="fa-solid fa-paper-plane"></i>
+                Send Message
+              </button>
+
+              <p data-form-status style="margin:0; min-height:1.4em; color:var(--muted);"></p>
+            </form>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="margin-top:22px;">
+          <div class="card reveal" style="padding:28px;">
+            <span class="badge">
+              <i class="fa-solid fa-clock"></i>
+              Response time
+            </span>
+            <h2 style="margin:12px 0 10px;">Fast, direct communication</h2>
+            <p style="margin:0; color:var(--muted);">
+              I keep the first reply focused on scope, timeline, and the best way to move forward so the conversation stays efficient.
+            </p>
+          </div>
+
+          <div class="card reveal" style="padding:28px;">
+            <span class="badge">
+              <i class="fa-solid fa-lock"></i>
+              Privacy
+            </span>
+            <h2 style="margin:12px 0 10px;">No unnecessary fields</h2>
+            <p style="margin:0; color:var(--muted);">
+              The form only asks for the details needed to understand your request. That keeps the page light, simple, and user-friendly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button class="btn backtop" data-backtop aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
